@@ -1,0 +1,32 @@
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Data and generated outputs (datasets, model weights, plots, logs)
+data/
+outputs/
+*.pt
+*.pth
+*.onnx
+*.mat
+*.npy
+*.npz
+*.csv
+*.png
+*.jpg
+*.jpeg
+
+# Python cache/build artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+build/
+dist/
+
+# Editor/OS cruft
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
