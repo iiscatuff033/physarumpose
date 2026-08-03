@@ -1,0 +1,9 @@
+@echo off
+echo Stage 6D: Fixed Semantic Anchor Head + Differentiable PhysarumPose
+python 88_train_stage6d_semantic_anchor.py --crop_csv outputs/stage5g_target_person_crop_filter/crop_metadata.csv --annotation_csv outputs/stage4b_strong_anchor_predictions/strong_anchor_predictions.csv --image_dir data/processed/synth_occlusion_mpii/images --out_dir outputs/stage6d_semantic_anchor_physarum --epochs 320 --batch_size 16 --input_size 256 --anchor_pretrain_epochs 90 --gt_anchor_warmup_epochs 130 --gt_anchor_ramp_end_epoch 210 --save_best_after_epoch 210
+python 89_evaluate_stage6d_semantic_anchor.py --crop_csv outputs/stage5g_target_person_crop_filter/crop_metadata.csv --annotation_csv outputs/stage4b_strong_anchor_predictions/strong_anchor_predictions.csv --image_dir data/processed/synth_occlusion_mpii/images --model_dir outputs/stage6d_semantic_anchor_physarum --out_dir outputs/stage6d_semantic_anchor_physarum/eval --batch_size 16
+python 90_visualize_stage6d_semantic_anchor.py --pred_csv outputs/stage6d_semantic_anchor_physarum/eval/stage6d_predictions.csv --topk_csv outputs/stage6d_semantic_anchor_physarum/eval/stage6d_topk_predictions.csv --image_dir data/processed/synth_occlusion_mpii/images --out_dir outputs/stage6d_semantic_anchor_physarum/eval/visualizations --max_images 150
+python 90_visualize_stage6d_semantic_anchor.py --pred_csv outputs/stage6d_semantic_anchor_physarum/eval/stage6d_predictions.csv --topk_csv outputs/stage6d_semantic_anchor_physarum/eval/stage6d_topk_predictions.csv --image_dir data/processed/synth_occlusion_mpii/images --out_dir outputs/stage6d_semantic_anchor_physarum/eval/presentation_images --max_images 80 --only_good
+python 91_make_stage6d_report.py --summary_csv outputs/stage6d_semantic_anchor_physarum/eval/stage6d_summary.csv --by_target_csv outputs/stage6d_semantic_anchor_physarum/eval/stage6d_summary_by_target.csv --out_txt outputs/stage6d_semantic_anchor_physarum/eval/stage6d_report_text.txt
+echo Done.
+pause
