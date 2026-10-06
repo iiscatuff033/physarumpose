@@ -1,5 +1,8 @@
 # PhysarumPose Stage 1: Body-Structure Prior on MPII
 
+<img width="1920" height="1080" alt="video_03_124 BO Swetha G_5160079_A_frame_0461_GOOD_score6 15_t53 60_idx1340_bfaaf4b0-7929-451a-bb2e-d8a9a5f11777_blueGT_redDARK_greenUDP" src="https://github.com/user-attachments/assets/56665fa7-e99e-4efc-b963-401f51b76587" />
+
+
 This is the first training stage. We do not train an image model yet.
 
 We train a coordinate-only model that learns simple body geometry:
